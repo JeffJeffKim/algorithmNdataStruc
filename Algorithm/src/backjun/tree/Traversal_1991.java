@@ -1,3 +1,4 @@
+// https://www.acmicpc.net/problem/1691
 package backjun.tree;
 
 import java.util.Scanner;
@@ -76,10 +77,13 @@ public class Traversal_1991 {
 			add(str);
 		}
 		sc.close();
+		
 		preOrder(root);
 		System.out.println();
+		
 		inOrder(root);
 		System.out.println();
+		
 		postOrder(root);
 	}
 }
