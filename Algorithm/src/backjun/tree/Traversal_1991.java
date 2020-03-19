@@ -46,6 +46,7 @@ public class Traversal_1991 {
 	
 	static void preOrder(Tree node) {
 		System.out.print(node.word);
+		
 		if(node.left != null)
 			preOrder(node.left);
 		if(node.right != null)

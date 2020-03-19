@@ -22,6 +22,7 @@ public class BinTreeSearch_5639 {
 //		}
 //		sc.close();
 		
+		//input
 		int arr[] = {50, 30,24,5,28,45,98,52,60};
 		for(int num : arr)
 			newIn(num);
