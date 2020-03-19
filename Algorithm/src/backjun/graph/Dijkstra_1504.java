@@ -1,3 +1,4 @@
+// https://www.acmicpc.net/problem/1504
 package backjun.graph;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Dij1504 {
+public class Dijkstra_1504 {
 
 	static int cntNode, cntEdge, pA, pB, arrCost[], INF=200001*1000;
 	static Map<Integer, List<Location>> map = new HashMap<Integer, List<Location>>();
@@ -35,6 +36,7 @@ public class Dij1504 {
 		Arrays.fill(arrCost, INF);
 		Queue<Location> q = new PriorityQueue<Location>(Comparator.comparing(l -> l.cost));
 		q.add(new Location(start, 0));
+		
 		while (!q.isEmpty()) {
 			Location prev = q.poll();
 //			int prevLoc = prev.node;
@@ -48,11 +50,15 @@ public class Dij1504 {
 //				}
 			}
 		}
+		
 		return arrCost[end];
 	}
 
 	private static int getCost(int pFirst, int pSecond) {
-		int result = getPartCost(1, pFirst) + getPartCost(pFirst, pSecond) + getPartCost(pSecond, cntNode);
+		int result = getPartCost(1, pFirst) 
+				+ getPartCost(pFirst, pSecond) 
+				+ getPartCost(pSecond, cntNode);
+		
 		if(result > INF)	result = -1;
 		return result;
 	}

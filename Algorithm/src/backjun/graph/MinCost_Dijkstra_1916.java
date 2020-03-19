@@ -1,3 +1,5 @@
+// https://www.acmicpc.net/problem/1916
+
 package backjun.graph;
 
 import java.util.Arrays;
@@ -6,8 +8,8 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Dij1916 {
-	static int cntCity, cntBus, pStart, pEnd, map[][], arrCost[];
+public class MinCost_Dijkstra_1916 {
+	static int cntBus, pStart, pEnd, map[][], arrCost[];
 	
 	static class City {
 		public int loc, cost;
@@ -20,19 +22,22 @@ public class Dij1916 {
 	public static void main(String[] args) {
 		getInput();
 		Queue<City> q = new PriorityQueue<City>(Comparator.comparing(c -> c.cost));
-		dii(pStart, q);
+		dij(pStart, q);
 		System.out.println(arrCost[pEnd]);
 	}
 	
-	private static void dii(int start, Queue<City> q) {
+	private static void dij(int start, Queue<City> q) {
 		q.add(new City(start, 0));
+		
 		while(!q.isEmpty()) {
 			City prev = q.poll();
 			start = prev.loc;
+			
 			for(int i=0; i<cntBus; i++) {
 				if(map[i][0] == start) {
 					int destLoc = map[i][1];
 					int destCost = map[i][2];
+					
 					if(arrCost[destLoc] > prev.cost + destCost) {
 						arrCost[destLoc] = prev.cost + destCost;
 						q.add(new City(destLoc, arrCost[destLoc]));
@@ -45,14 +50,17 @@ public class Dij1916 {
 	
 	private static void getInput() {
 		Scanner sc = new Scanner(System.in);
-		cntCity = sc.nextInt();
+		
+		int cntCity = sc.nextInt();
 		cntBus = sc.nextInt();
 		map = new int[cntBus][3];
+		
 		for(int i=0; i<cntBus; i++) {
 			map[i][0] = sc.nextInt()-1;
 			map[i][1] = sc.nextInt()-1;
 			map[i][2] = sc.nextInt();
 		}
+		
 		pStart = sc.nextInt()-1;
 		pEnd = sc.nextInt()-1;
 		

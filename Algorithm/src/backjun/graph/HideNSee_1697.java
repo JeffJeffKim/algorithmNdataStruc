@@ -1,10 +1,12 @@
+// https://www.acmicpc.net/problem/1697
+
 package backjun.graph;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Bfs1697 {
+public class HideNSee_1697 {
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -16,7 +18,8 @@ public class Bfs1697 {
 			System.out.println(0);
 			return;
 		}
-			
+
+		// solve 1
 		Queue<int[]> q1 = new ArrayDeque<int[]>();
 		q1.add(new int[] {start+1, 1});
 		q1.add(new int[] {start-1, 1});
@@ -34,6 +37,8 @@ public class Bfs1697 {
 			q1.add(new int[] {info[0]-1, info[1]+1});	
 			q1.add(new int[] {info[0]*2, info[1]+1});
 		}
+		
+		// solve 2
 //		Queue<Info> q = new ArrayDeque<Info>();
 //		q.add(new Info(start+1, 1));	
 //		q.add(new Info(start-1, 1));	
@@ -50,6 +55,7 @@ public class Bfs1697 {
 //			q.add(new Info(info.cur-1, info.cnt+1));	
 //			q.add(new Info(info.cur*2, info.cnt+1));
 //		}
+		
 		System.out.println(result);
 	}
 
