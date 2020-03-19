@@ -1,11 +1,11 @@
+// https://www.acmicpc.net/problem/11724
 package backjun.dfs;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Dfs11724 {
+public class ConnectedComponent_11724 {
 	
-	static int cntNode, cntEdge;
 	static ArrayList<ArrayList<Integer>> map = new ArrayList<ArrayList<Integer>>();
 	static boolean visit[];
 	
@@ -34,12 +34,12 @@ public class Dfs11724 {
 	
 	static void getIn() {
 		Scanner sc = new Scanner(System.in);
-		cntNode = sc.nextInt();
-		cntEdge = sc.nextInt();
+		int cntNode = sc.nextInt();
+		int cntEdge = sc.nextInt();
 		visit = new boolean[cntNode];
-		for(int i=0; i<cntNode; i++) {
+		for(int i=0; i<cntNode; i++) 
 			map.add(new ArrayList<Integer>());
-		}
+		
 		for(int i=0; i<cntEdge; i++) {
 			int a = sc.nextInt()-1, b = sc.nextInt()-1;
 			map.get(a).add(b);

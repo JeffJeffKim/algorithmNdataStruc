@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Queue;
 
 
-public class Dfs2667 {
+public class BuildingBlock_2667 {
 	static int curCnt;
 	
 	public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class Dfs2667 {
 		List<Integer> l5 = Arrays.asList(0,1,1,1,1,1,0); 
 		List<Integer> l6 = Arrays.asList(0,1,1,1,0,0,0);
 		List<List<Integer>> input = Arrays.asList(l0, l1, l2, l3, l4, l5, l6);
-		Dfs2667 obj = new Dfs2667();
+		BuildingBlock_2667 obj = new BuildingBlock_2667();
 		obj.printResult(input);
 	}
 	

@@ -1,10 +1,12 @@
+// https://www.acmicpc.net/problem/1987
+
 package backjun.dfs;
 
 import java.util.Scanner;
 
-public class Dfs1987 {
+public class Alphabet_MaxMove_1987 {
 	
-	static int X, Y, movX[] = {0,0,-1,1}, movY[] = {-1,1,0,0}, result = Integer.MAX_VALUE;
+	static int X, Y, result = Integer.MAX_VALUE;
 	static char[][] map;
 	
 	public static void main(String[] args) {
@@ -14,6 +16,7 @@ public class Dfs1987 {
 	}
 	
 	static void travel(int x, int y, int cnt, boolean[] visit) {
+		int movX[] = {0,0,-1,1}, movY[] = {-1,1,0,0};
 		if(visit[map[y][x]-65]) {
 			if(result > cnt)	result = cnt;
 			return;
