@@ -1,3 +1,5 @@
+// https://www.acmicpc.net/problem/11650
+
 package backjun.sort;
 
 import java.util.ArrayList;
@@ -19,16 +21,14 @@ public class TwoDSort_11650 {
 		getIn();
 		arr.comparator();
 		
-		Set set = arr.entrySet();
-		Iterator itr = set.iterator();
-		while(itr.hasNext()) {
-			Map.Entry me = (Map.Entry)itr.next();
-			ArrayList<Integer> vv = (ArrayList<Integer>) me.getValue();
-			Collections.sort(vv);
-			vv = (ArrayList<Integer>) vv.stream().sorted(Comparator.naturalOrder()).collect(Collectors.toList());
-			for(int i : vv)
-				System.out.println(me.getKey() + " " + i);
-				
+		Iterator<Integer> keys = arr.keySet().iterator();
+		while(keys.hasNext()) {
+			var key = keys.next();
+			var value = arr.get(key);
+
+			value.stream()
+				.sorted(Comparator.naturalOrder())
+				.forEach(i -> System.out.println(key +" "+ i));
 		}
 	}
 	

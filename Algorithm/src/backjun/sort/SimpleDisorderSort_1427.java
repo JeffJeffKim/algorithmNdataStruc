@@ -1,3 +1,5 @@
+// https://www.acmicpc.net/problem/1427
+
 package backjun.sort;
 
 import java.util.ArrayList;
@@ -13,7 +15,8 @@ public class SimpleDisorderSort_1427 {
 		arr.stream()
 			.sorted(Comparator.reverseOrder())
 //			.sorted(Comparator.naturalOrder())
-			.forEach(i -> System.out.print(i));
+			.forEach(System.out::print);
+//			.forEach(i -> System.out.print(i));
 //		Collections.sort(arr);
 //		for(int i = arr.size()-1; i>=0; i--)
 //			System.out.print(arr.get(i));
