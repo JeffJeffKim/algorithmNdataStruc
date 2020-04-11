@@ -14,7 +14,9 @@ public class ListDeepCopy {
 		List<Integer> list4 = Arrays.asList(0,1,0,0,0);
 		List<List<Integer>> list = Arrays.asList(list1, list2, list3, list4);
 		printOut(list);
+		System.out.println("=========");
 		deepCopy(list);
+		System.out.println("=========");
 		printOut(list);
 	}
 	
