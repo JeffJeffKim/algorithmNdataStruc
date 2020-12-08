@@ -5,6 +5,7 @@ public class GitTest {
 		System.out.println("Main");
 		System.out.println("Branch");
 		System.out.println("Test Again");
+		System.out.println("Branch 1more line");
 	}
 
 }
