@@ -34,7 +34,8 @@ public class Dijkstra_1504 {
 
 	private static int getPartCost(int start, int end) {
 		Arrays.fill(arrCost, INF);
-		Queue<Location> q = new PriorityQueue<Location>(Comparator.comparing(l -> l.cost));
+		Queue<Location> q = new PriorityQueue<Location>(
+				Comparator.comparing(l -> l.cost));
 //		q = new PriorityQueue<Location>(new Comparator<Location>() {
 //			public int compare(Location o1, Location o2) {
 //				return 0;

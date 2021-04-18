@@ -1,4 +1,4 @@
-package practice;
+package company.bairesDev;
 
 import java.util.Stack;
 

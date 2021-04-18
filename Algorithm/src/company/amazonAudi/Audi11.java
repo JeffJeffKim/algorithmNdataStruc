@@ -1,4 +1,4 @@
-package AmaAudi;
+package company.amazonAudi;
 
 import java.util.Arrays;
 import java.util.List;
