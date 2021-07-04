@@ -31,12 +31,13 @@ public class SortLib {
 			bw.write(n.n+" ");
 		bw.write("\n");
 		
-		Arrays.sort(arrNode, new Comparator<Node>() {
-			@Override
-			public int compare(Node o1, Node o2) {
-				return o2.n - o1.n;
-			}
-		});
+//		Arrays.sort(arrNode, new Comparator<Node>() {
+//			@Override
+//			public int compare(Node o1, Node o2) {
+//				return o2.n - o1.n;
+//			}
+//		});
+		Arrays.sort(arrNode, (o1, o2) -> o2.n - o1.n);
 		for(Node n : arrNode)
 			bw.write(n.n+" ");
 		Arrays.sort(arrNode, Comparator.comparing(n -> n.ch));

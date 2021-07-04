@@ -74,12 +74,13 @@ public class Solution2 {
         	}
     	} else {
     		if(orderBy == 0) {
-    			Collections.sort(list, new Comparator<Item>() {
-    				@Override
-    				public int compare(Item o1, Item o2) {
-    					return -(o1.name.compareTo(o2.name));
-    				}
-    			});
+//    			Collections.sort(list, new Comparator<Item>() {
+//    				@Override
+//    				public int compare(Item o1, Item o2) {
+//    					return -(o1.name.compareTo(o2.name));
+//    				}
+//    			});
+    			Collections.sort(list, (o1, o2) -> -(o1.name.compareTo(o2.name)));
         	}else if(orderBy == 1) {
         		Collections.sort(list, new Comparator<Item>() {
         			@Override
