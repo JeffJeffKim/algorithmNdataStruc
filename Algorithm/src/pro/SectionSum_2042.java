@@ -21,22 +21,22 @@ public class SectionSum_2042 {
 		nQuery = Integer.parseInt(st.nextToken());
 		nQuery+= Integer.parseInt(st.nextToken());
 		
-		arr = new int[N]; //°ªÀ» ¹Þ´Â ¸®½ºÆ® 
+		arr = new int[N]; //ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® 
 		
 		for(int i=0; i<N; i++){
 			arr[i] = Integer.parseInt(br.readLine());
 		}
 		
-		//// ¾Ë°í¸®Áò Àû¿ë!! /////////
+		//// ï¿½Ë°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!! /////////
 		
-		//¼¼±×¸ÕÆ® Æ®¸® ¸ð¾ç ¸¸µé±â 
-		//Æ®¸®ÀÇ Å©±â¸¦ °è»êÇØ¼­ Æ®¸®¸¦ ÃÊ±âÈ­ ÇØÁØ´Ù.
+		//ï¿½ï¿½ï¿½×¸ï¿½Æ® Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ 
+		//Æ®ï¿½ï¿½ï¿½ï¿½ Å©ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ ï¿½ï¿½ï¿½Ø´ï¿½.
 		int x = (int) Math.ceil(Math.log(N)/Math.log(2));
 		int size = (int)Math.pow(2, x)*2;
 		
 		treeArr = new long[size];
 		
-		//ÃÊ±â°ªÀ» ¼ÂÆÃÇØ ÁÖ´Â ¸Þ¼Òµå
+		//ï¿½Ê±â°ªï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Þ¼Òµï¿½
 		init(arr,0,N-1,1);
 		
 		long result=0;
@@ -50,7 +50,7 @@ public class SectionSum_2042 {
 			
 			if(t == 1){
 				int diff=idx2 - arr[idx1-1]; 
-				arr[idx1-1] = idx2; //arrÀÇ °ªµµ ¾÷µ¥ÀÌÆ® ÇØ¾ß ÇÑ´Ù!!
+				arr[idx1-1] = idx2; //arrï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ø¾ï¿½ ï¿½Ñ´ï¿½!!
 				update(1,0,N-1,idx1-1,diff);
 			}else{
 				//result = sum(1,0,N-1,idx1-1,idx2-1);
@@ -60,7 +60,7 @@ public class SectionSum_2042 {
 		}	
 	}
 	
-	/////// ÃÊ±âÈ­  ////////////
+	/////// ï¿½Ê±ï¿½È­  ////////////
 	static long init(int[] arr, int start, int end, int node) {
 		if(start==end){
 			return treeArr[node] = arr[start];
