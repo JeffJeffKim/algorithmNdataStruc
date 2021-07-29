@@ -1,4 +1,4 @@
-package beckjun.graph;
+package backjun.graph;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

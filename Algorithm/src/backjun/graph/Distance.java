@@ -1,4 +1,4 @@
-package beckjun.graph;
+package backjun.graph;
 
 public class Distance implements Comparable<Distance>{
 	int idx, dist;

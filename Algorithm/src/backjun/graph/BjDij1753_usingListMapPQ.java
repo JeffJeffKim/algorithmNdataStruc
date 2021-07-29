@@ -1,4 +1,4 @@
-package beckjun.graph;
+package backjun.graph;
 
 import java.io.*;
 import java.util.*;

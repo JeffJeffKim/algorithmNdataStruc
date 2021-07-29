@@ -1,4 +1,4 @@
-package beckjun.graph;
+package backjun.graph;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
@@ -59,7 +59,7 @@ public class BjGraph6118 {
 					}
 				}
 			}
-			if(find) {	// ¸¶Áö¸· loop¿¡¼­ Ã£Àº°ÍÀÌ ÀÖÀ»¶§
+			if(find) {	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ loopï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				if(!alreadyChk) {
 					cntSol++;
 					changedLev=true;

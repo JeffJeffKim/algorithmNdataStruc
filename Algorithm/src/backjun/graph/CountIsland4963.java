@@ -1,4 +1,4 @@
-package beckjun.graph;
+package backjun.graph;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
