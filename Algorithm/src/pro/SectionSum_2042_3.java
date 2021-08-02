@@ -20,11 +20,11 @@ public class SectionSum_2042_3 {
         int cnt = updateCnt + renderCnt;
 
         arrInput = new int[numCnt + 1];
-        for (int i = 1; i < numCnt + 1; i++) {
+        for (int i = 1; i <= numCnt; i++) {
             arrInput[i] = Integer.parseInt(br.readLine());
         }
 
-        int pow = (int) Math.ceil(Math.log(numCnt) / Math.log(2)) + 1;
+        int pow = (int) Math.ceil(Math.log(numCnt) / Math.log(2)) +1;
         int size = (int) Math.pow(2, pow);
         tree = new int[size];
 
@@ -46,7 +46,6 @@ public class SectionSum_2042_3 {
             }
         }
 
-
         br.close();
         bw.close();
 
@@ -62,7 +61,7 @@ public class SectionSum_2042_3 {
     }
 
     static void update(int idx, int s, int e, int loc, int diff) {
-        if (loc < s || loc > e) {
+        if (loc < s || e < loc) {
             return;
         }
 
@@ -76,24 +75,24 @@ public class SectionSum_2042_3 {
 
         int mid = (s + e) / 2;
         update(idx * 2, s, mid, loc, diff);
-        update(idx * 2+1, mid+1, e, loc, diff);
+        update(idx * 2 + 1, mid + 1, e, loc, diff);
     }
 
-    static int sum(int idx, int s, int e, int left, int right) {
-        if (left <= s && e <= right) {
+    static int sum(int idx, int s, int e, int l, int r) {
+        if (l <= s && e <= r) {
             return tree[idx];
         }
 
-        if (right < s || left > e) {
+        if (l > e || r < s) {
             return 0;
         }
 
-//        if (s >= e) {
-//            return 0;
-//        }
+        if (s >= e) {
+            return 0;
+        }
 
         int mid = (s + e) / 2;
-        return sum(idx * 2, s, mid, left, right) + sum(idx * 2 + 1, mid + 1, e, left, right);
+        return sum(idx * 2, s, mid, l, r) + sum(idx * 2 + 1, mid + 1, e, l, r);
     }
 
 }
