@@ -1,4 +1,4 @@
-package programmers;
+package company.programmers;
 
 public class DevMatching1 {
 

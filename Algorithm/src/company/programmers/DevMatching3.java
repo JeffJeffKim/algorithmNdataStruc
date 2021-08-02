@@ -1,4 +1,4 @@
-package programmers;
+package company.programmers;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -8,7 +8,7 @@ public class DevMatching3 {
 	
 	
 	static public int[] solution(String[] enroll, String[] referral, String[] seller, int[] amount) {
-		//enroll Á¶Á÷¿ø, referral »óÀ§, 
+		//enroll ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, referral ï¿½ï¿½ï¿½ï¿½, 
         int[] answer = new int[enroll.length];
         final int mul = 100;
         Map<String, Node> map = new HashMap<String, Node>();

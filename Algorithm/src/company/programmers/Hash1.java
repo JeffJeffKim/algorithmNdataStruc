@@ -1,4 +1,4 @@
-package programmers;
+package company.programmers;
 
 import java.util.HashMap;
 import java.util.Iterator;
