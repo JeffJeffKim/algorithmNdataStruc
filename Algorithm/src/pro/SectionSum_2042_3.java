@@ -19,77 +19,81 @@ public class SectionSum_2042_3 {
         int renderCnt = Integer.parseInt(st.nextToken());
         int cnt = updateCnt + renderCnt;
 
+        arrInput = new int[numCnt + 1];
+        for (int i = 1; i < numCnt + 1; i++) {
+            arrInput[i] = Integer.parseInt(br.readLine());
+        }
+
         int pow = (int) Math.ceil(Math.log(numCnt) / Math.log(2)) + 1;
         int size = (int) Math.pow(2, pow);
         tree = new int[size];
-
-        arrInput = new int[numCnt + 1];
-        for (int i = 1; i <= numCnt; i++) {
-            arrInput[i] = Integer.parseInt(br.readLine());
-        }
 
         init(1, 1, numCnt);
 
         while (cnt-- > 0) {
             st = new StringTokenizer(br.readLine());
-            int command = Integer.parseInt(st.nextToken());
+            int formular = Integer.parseInt(st.nextToken());
             int idx = Integer.parseInt(st.nextToken());
             int val = Integer.parseInt(st.nextToken());
 
-            if (command == 1) {
+            if (formular == 1) {
                 int diff = val - arrInput[idx];
                 arrInput[idx] = val;
-                update(1, idx, 1, numCnt, diff);
+                update(1, 1, numCnt, idx, diff);
             } else {
-                int sum = sum(1, idx, val, 1, numCnt);
+                int sum = sum(1, 1, numCnt, idx, val);
                 bw.write(sum+"\n");
             }
-
         }
+
 
         br.close();
         bw.close();
 
     }
 
-    static int init(int node, int s, int e) {
+    static int init(int idx, int s, int e) {
         if (s >= e) {
-            return tree[node] = arrInput[s];
+            return tree[idx] = arrInput[s];
         }
 
         int mid = (s + e) / 2;
-        return tree[node] = init(node * 2, s, mid) + init(node * 2 + 1, mid + 1, e);
+        return tree[idx] = init(idx * 2, s, mid) + init(idx * 2 + 1, mid + 1, e);
     }
 
-    static void update(int node, int idx, int s, int e, int diff) {
-        if (idx < s || e < idx) {
+    static void update(int idx, int s, int e, int loc, int diff) {
+        if (loc < s || loc > e) {
             return;
         }
 
-        tree[node] += diff;
+        if (s <= loc && loc <= e) {
+            tree[idx] += diff;
+        }
+
         if (s >= e) {
             return;
         }
 
         int mid = (s + e) / 2;
-        update(node * 2, idx, s, mid, diff);
-        update(node * 2 + 1, idx, mid + 1, e, diff);
+        update(idx * 2, s, mid, loc, diff);
+        update(idx * 2+1, mid+1, e, loc, diff);
     }
 
-    static int sum(int node, int left, int right, int s, int e) {
-        if (left > e || right < s) {
-            return 0;
-        }
-
+    static int sum(int idx, int s, int e, int left, int right) {
         if (left <= s && e <= right) {
-            return tree[node];
+            return tree[idx];
         }
 
-        if (s >= e) {
+        if (right < s || left > e) {
             return 0;
         }
 
+//        if (s >= e) {
+//            return 0;
+//        }
+
         int mid = (s + e) / 2;
-        return sum(node * 2, left, right, s, mid) + sum(node * 2 + 1, left, right, mid + 1, e);
+        return sum(idx * 2, s, mid, left, right) + sum(idx * 2 + 1, mid + 1, e, left, right);
     }
+
 }
