@@ -12,14 +12,14 @@ public class QuickSort_Practice {
 	static void quickSort(int[] arr, int s, int e) {
 		if(s >= e)	return;
 		int pivot = partition(arr, s, e);
-		partition(arr, s, pivot-1);
-		partition(arr, pivot+1, e);
+		quickSort(arr, s, pivot-1);
+		quickSort(arr, pivot+1, e);
 	}
 	
 	static int partition(int[] arr, int s, int e) {
 		int move = s-1;
 		for(int i=s; i<e; i++) {
-			if(arr[e] > arr[i]) 
+			if(arr[e] >= arr[i])
 				swap(arr, i, ++move);
 		}
 		swap(arr, e, ++move);
