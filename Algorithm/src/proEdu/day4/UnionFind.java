@@ -33,9 +33,9 @@ public class UnionFind {
 		setUnion('E', 'B');
 		
 		if(getFind('A') == getFind('B'))
-			System.out.println("같은 조직");
+			System.out.println("Same Group");
 		else
-			System.out.println("다른 조직");
+			System.out.println("Diff Group");
 		br.close();
 		bw.close();
 	}
