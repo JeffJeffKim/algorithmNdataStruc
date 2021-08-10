@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 public class Solution1 {
 
@@ -23,7 +24,8 @@ public class Solution1 {
         double pp = Double.parseDouble(input[0]);
         double ch = Double.parseDouble(input[1]);
         double diff = ch-pp;
-        
+
+        String addResult = "";
         if(diff < 0) {
           System.out.println("ERROR");
         } else if (diff == 0) {
@@ -40,12 +42,18 @@ public class Solution1 {
             		result.add(map.get(key));
             }
             Collections.sort(result);
-            String addResult = "";
+
+          }
             for(String cur : result) {
             	addResult += cur+",";
             }
-            System.out.println(addResult.substring(0, addResult.length()-2));
-          }
+//              System.out.println("addResult = " + addResult);
+            System.out.println(addResult.substring(0, addResult.length()-1));
+            addResult = result.stream()
+//                    .map(s -> s)
+                    .collect(Collectors.joining(","));
+            System.out.println(addResult);
+
         }
 	}
 

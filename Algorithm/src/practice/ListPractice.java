@@ -1,6 +1,7 @@
 package practice;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ListPractice {
@@ -12,6 +13,7 @@ public class ListPractice {
         list.add(a);
         list.add(b);
         list = List.of(a, b);
+        List<User> users = Arrays.asList(a, b);
 
         list.remove(a);
 

@@ -10,6 +10,7 @@ public class Solution2 {
 		String line = "70.920 -38.797 14.354 99.323 90.374 7.581";
 		String[] arrStr = line.split(" ");
 		Arrays.sort(arrStr, Comparator.comparing(s -> Double.parseDouble(s)));
+//		Arrays.sort(arrStr, (o1, o2) -> (int) (Double.parseDouble(o1) - Double.parseDouble(o2)));
 		String  result = "";
 		for(int i=0; i<arrStr.length; i++) {
 			result += arrStr[i] + " "; 

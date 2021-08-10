@@ -96,6 +96,11 @@ public class SectionSum_2042_3 {
 
 
 }
+
+//    int pow = (int) Math.ceil(Math.log(numCnt) / Math.log(2)) + 1;
+//    int size = (int) Math.pow(2, pow);
+//    tree = new int[size];
+//
 //    static int init(int idx, int s, int e) {
 //        if (s >= e)
 //            return tree[idx] = arrInput[s];
