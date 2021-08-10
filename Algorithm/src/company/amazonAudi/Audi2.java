@@ -43,3 +43,20 @@ public class Audi2 {
     }
 
 }
+
+/*
+Optimizing box weights,Given an integer array of the item weights(arr) to be packed,
+divide the item weights into two subsets, A and B ,
+for packing into the associated boxes while respecting below conditions between A and B.
+e.g. n =5 and arr= [3,7,5,6,2]
+then return the subset A in increasing order where the sum of A's > sum of B's.
+if more than one pair exist return the one with the max total weight.
+rules :-
+the intersections of A and B is null
+The union A and B is equal to the original array
+the number of elements in subset A is minimal
+The sum of A's weight is greater than the sum of B's weight
+
+Return the subset of A in increasing order where the sum of A' weights is greater than the sum of B's weights
+if more than one subSet A exists, return the one with maximum total weight
+ */
