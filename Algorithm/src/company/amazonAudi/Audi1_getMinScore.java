@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-public class Audi1 {
+public class Audi1_getMinScore {
 	
 	public static int result1 = Integer.MAX_VALUE;
 	

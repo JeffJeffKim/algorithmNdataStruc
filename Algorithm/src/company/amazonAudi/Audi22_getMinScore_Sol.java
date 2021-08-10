@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Audi22 {
+public class Audi22_getMinScore_Sol {
 	public static int result1 = Integer.MAX_VALUE;
 	
 	public static void main(String[] args) {

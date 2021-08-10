@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Solution1_1 {
+public class Solution1_1_howManySwaps_Sol {
 
 	
 	public static void main(String[] args) {

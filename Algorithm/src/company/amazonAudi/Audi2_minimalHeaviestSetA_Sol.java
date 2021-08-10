@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class Audi2 {
+public class Audi2_minimalHeaviestSetA_Sol {
 	
 	public static void main(String[] args) {
 		List<Integer> list1 = Arrays.asList(5, 3, 2, 4, 1, 2);

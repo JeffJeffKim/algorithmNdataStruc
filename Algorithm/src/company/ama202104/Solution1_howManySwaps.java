@@ -3,7 +3,7 @@ package company.ama202104;
 import java.util.Arrays;
 import java.util.List;
 
-public class Solution1 {
+public class Solution1_howManySwaps {
 	static long result = 0;
 	
 	public static void main(String[] args) {
