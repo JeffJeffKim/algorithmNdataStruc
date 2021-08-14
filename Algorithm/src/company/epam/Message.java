@@ -24,16 +24,16 @@ class Key{
     }
 }
 
-public class Main {
-    public static void main(String args[])
-    Map<Key,Object> map= new Hashmap();
-    Key key1 = new Key("1");
-    Key key2 = new Key("2");
-    map.put(key1, new Object());
-    map.put(key2, new Object());
-}
-}
+//public class Main {
+//    public static void main(String args[]) {
+//    Map<Key,Object> map= new Hashmap();
+//    Key key1 = new Key("1");
+//    Key key2 = new Key("2");
+//    map.put(key1, new Object());
+//    map.put(key2, new Object());
+//}
+//}
 
-enrty[] = {linkedlist, linkedlist, ...}
-entry[0].linkedlist[0] = Key("1")
-entry[0].linkedlist[1] = Key("2")
+//enrty[] = {linkedlist, linkedlist, ...}
+//entry[0].linkedlist[0] = Key("1")
+//entry[0].linkedlist[1] = Key("2")
