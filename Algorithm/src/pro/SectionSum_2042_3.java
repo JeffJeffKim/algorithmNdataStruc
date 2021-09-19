@@ -27,69 +27,32 @@ public class SectionSum_2042_3 {
         int pow = (int) Math.ceil(Math.log(numCnt) / Math.log(2)) + 1;
         int size = (int) Math.pow(2, pow);
         tree = new int[size];
-
-        init(1, 1, numCnt);
-        while (cnt-- > 0) {
-            st = new StringTokenizer(br.readLine());
-            int formular = Integer.parseInt(st.nextToken());
-            int idx = Integer.parseInt(st.nextToken());
-            int val = Integer.parseInt(st.nextToken());
-
-            if (formular == 1) {
-                int diff = val - arrInput[idx];
-                arrInput[idx] = val;
-                update(1, 1, numCnt, idx, diff);
-            } else {
-                int sum = sum(1, 1, numCnt, idx, val);
-                bw.write(sum + "\n");
-            }
-        }
-
-
         br.close();
         bw.close();
     }
 
     static int init(int node, int s, int e) {
-        if (s >= e) {
+        if (s >= e)
             return tree[node] = arrInput[s];
-        }
-
         int mid = (s + e) / 2;
         return tree[node] = init(node * 2, s, mid) + init(node * 2 + 1, mid + 1, e);
     }
 
     static void update(int node, int s, int e, int idx, int diff) {
-        if (s <= idx && idx <= e) {
+        if (s <= idx && idx <= e)
             tree[node] += diff;
-        }
-
-        if (s >= e) {
-            return;
-        }
-
-        if (idx < s || e < idx) {
-            return;
-        }
-
+        if (s >= e) return;
+        if (idx < s || e < idx) return;
         int mid = (s + e) / 2;
         update(node * 2, s, mid, idx, diff);
         update(node * 2 + 1, mid + 1, e, idx, diff);
     }
 
     static int sum(int node, int s, int e, int l, int r) {
-        if (l <= s && e <= r) {
+        if (l <= s && e <= r)
             return tree[node];
-        }
-
-        if (l > e || r < s) {
-            return 0;
-        }
-
-        if (s >= e) {
-            return 0;
-        }
-
+        if (l > e || r < s) return 0;
+        if (s >= e) return 0;
         int mid = (s + e) / 2;
         return sum(node * 2, s, mid, l, r) + sum(node * 2 + 1, mid + 1, e, l, r);
     }
