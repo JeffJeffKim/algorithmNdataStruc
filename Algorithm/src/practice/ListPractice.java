@@ -1,6 +1,8 @@
 package practice;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ListPractice {
 
@@ -14,10 +16,6 @@ public class ListPractice {
         List<User> users = Arrays.asList(a, b);
 
         list.remove(a);
-
-        List<List<Integer>> list2 = new ArrayList<>();
-        Set<Integer> set = new HashSet<>();
-        
 
     }
 
